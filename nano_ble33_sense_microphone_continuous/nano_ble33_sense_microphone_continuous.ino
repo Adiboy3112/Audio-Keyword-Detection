@@ -2,30 +2,7 @@
 // If your target is limited in memory remove this macro to save 10K RAM
 #define EIDSP_QUANTIZE_FILTERBANK   0
 
-/**
- * Define the number of slices per model window. E.g. a model window of 1000 ms
- * with slices per model window set to 4. Results in a slice size of 250 ms.
- * For more info: https://docs.edgeimpulse.com/docs/continuous-audio-sampling
- */
 #define EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW 3
-
-/*
- ** NOTE: If you run into TFLite arena allocation issue.
- **
- ** This may be due to may dynamic memory fragmentation.
- ** Try defining "-DEI_CLASSIFIER_ALLOCATION_STATIC" in boards.local.txt (create
- ** if it doesn't exist) and copy this file to
- ** `<ARDUINO_CORE_INSTALL_PATH>/arduino/hardware/<mbed_core>/<core_version>/`.
- **
- ** See
- ** (https://support.arduino.cc/hc/en-us/articles/360012076960-Where-are-the-installed-cores-located-)
- ** to find where Arduino installs cores on your machine.
- **
- ** If the problem persists then there's not enough memory for this model and application.
- */
-
-/* Includes ---------------------------------------------------------------- */
-#include <PDM.h>
 #include <keyword-detection_inferencing.h>
 
 /** Audio buffers, pointers and selectors */
